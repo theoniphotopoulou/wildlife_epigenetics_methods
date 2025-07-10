@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+*.Rdata
+.Ruserdata
+*.html
+*.rds
+*.DS_Store
+XX_phenoage.R
