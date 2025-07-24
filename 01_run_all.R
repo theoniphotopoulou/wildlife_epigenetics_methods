@@ -213,7 +213,7 @@ registerDoParallel(cl)
 getDoParWorkers()
 
 nn = nrow(pars)
-res <- foreach(kk = nn, 
+res <- foreach(kk = 1:nn, 
                .packages = c("glmnet", "dplyr", "tidyr","stringr", 
                              "randomForest", "survival", "flexsurv",
                              "data.table")) %dopar% {

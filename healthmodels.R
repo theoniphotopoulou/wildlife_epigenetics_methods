@@ -222,7 +222,7 @@ run_en_health = function(x, yvar, y_transform = "lin", health, sample_info, en_a
   
   tmp <- try(
     run_en_health_nocatch(x = x, yvar = yvar, y_transform = y_transform, health = health, sample_info = sample_info, en_alpha = en_alpha, en_family = en_family, n_cpg = n_cpg, use_weights = use_weights, controls_only = controls_only, 
-                   reduce_size = reduce_size), 
+                          reduce_size = reduce_size), 
     silent = TRUE)
   if(class(tmp) != "try-error"){
     tmp = tmp
