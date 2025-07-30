@@ -6,3 +6,5 @@
 *.rds
 *.DS_Store
 XX_phenoage.R
+data/
+output/

@@ -13,7 +13,8 @@ set.seed(47)
 
 load("output/dolphin_data.Rdata")
 health$VESOP_Flag = ifelse(health$VESOP_surv < 0.925, 1, 0)
-
+n_cpg <- dim(x)[2]
+  
 #################
 ## ELASTIC NET ##
 #################
@@ -22,7 +23,7 @@ health$VESOP_Flag = ifelse(health$VESOP_surv < 0.925, 1, 0)
 pars = expand.grid(use_weights = c(FALSE, TRUE), controls_only = c(FALSE, TRUE), reduce_size = c(FALSE, TRUE), 
                    loglin_age = c("lin", "loglin"), loglin_sexm = 15, 
                    en_alpha = c(0.01, seq(from = 0.1, to = 0.9, by = 0.1), 0.99),
-                   n_cpg = c(500, 1000, 2000, 31157))
+                   n_cpg = c(500, 1000, 2000, n_cpg))
 pars = pars |> filter(!(controls_only & reduce_size))
 pars = pars |> mutate(par_set = 1:n())
 
@@ -66,7 +67,7 @@ rm(res, pars)
 pars = expand.grid(use_weights = c(FALSE, TRUE), controls_only = c(FALSE, TRUE), reduce_size = c(FALSE, TRUE), 
                    loglin_age = c("lin", "loglin"), loglin_sexm = 15, 
                    rf_mtry = c(1/6, 1/3, 1/2),
-                   n_cpg = c(500, 1000, 2000, 31157))
+                   n_cpg = c(500, 1000, 2000, n_cpg))
 pars = pars |> filter(!(controls_only & reduce_size))
 pars = pars |> mutate(par_set = 1:n())
 
@@ -153,7 +154,7 @@ pars = expand.grid(use_weights = c(FALSE), controls_only = c(FALSE), reduce_size
                    y_transform = "lin",
                    en_family = "binomial",
                    en_alpha = c(0.01, seq(from = 0.1, to = 0.9, by = 0.1), 0.99),
-                   n_cpg = c(500, 1000, 2000, 31157),
+                   n_cpg = c(500, 1000, 2000, n_cpg),
                    stringsAsFactors = FALSE) 
 pars = pars |> filter(!(controls_only & reduce_size))
 pars = pars |> mutate(par_set = 1:n())
@@ -201,7 +202,7 @@ pars = expand.grid(use_weights = c(FALSE), controls_only = c(FALSE), reduce_size
                             "Globulin_Flag", "Glucose_Flag"),
                    y_transform = "factor",
                    rf_mtry = c(1/6, 1/3, 1/2),
-                   n_cpg = c(500, 1000, 2000, 31157),
+                   n_cpg = c(500, 1000, 2000, n_cpg),
                    stringsAsFactors = FALSE)
 pars = pars |> filter(!(controls_only & reduce_size))
 pars = pars |> mutate(par_set = 1:n())
