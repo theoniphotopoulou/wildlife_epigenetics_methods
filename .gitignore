@@ -8,3 +8,4 @@
 XX_phenoage.R
 data/
 output/
+00_make_synthetic_data.R

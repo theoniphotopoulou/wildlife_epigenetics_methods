@@ -2,7 +2,7 @@ library(doParallel)
 library(dplyr)
 library(tidyr)
 
-# make functions folder
+# load functions and helper scripts
 source("fgecs.R")
 source("probage.R")
 source("healthmodels.R")
@@ -14,7 +14,7 @@ set.seed(47)
 load("output/dolphin_data.Rdata")
 health$VESOP_Flag = ifelse(health$VESOP_surv < 0.925, 1, 0)
 n_cpg <- dim(x)[2]
-  
+
 #################
 ## ELASTIC NET ##
 #################

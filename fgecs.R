@@ -109,6 +109,8 @@ run_rf_nocatch = function(x, sample_info, n_cpg = NULL, use_weights = FALSE, con
                           loglin_age = "lin", loglin_sexm = NULL, rf_mtry = 1/3){
   # downsample matches sample size to what is returned if controls_only == TRUE. Only used if controls_only == FALSE
   
+  nfolds = max(sample_info$kf.foldid)
+  
   test.pred.df = data.frame(DOLPHIN.ID = sample_info$DOLPHIN.ID)
   train.pred.df = data.frame(DOLPHIN.ID = sample_info$DOLPHIN.ID)
   val.pred.df = data.frame(DOLPHIN.ID = sample_info$DOLPHIN.ID)
