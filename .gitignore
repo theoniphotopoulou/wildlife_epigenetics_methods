@@ -10,3 +10,4 @@ data/
 output/
 00_data_prep.R
 00_make_synthetic_data_internal.R
+01_run_all_internal.R

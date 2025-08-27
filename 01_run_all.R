@@ -11,8 +11,7 @@ source("age-transformations-zoller.R")
 
 set.seed(47)
 
-load("output/dolphin_data.Rdata")
-health$VESOP_Flag = ifelse(health$VESOP_surv < 0.925, 1, 0)
+load("output/synth_dolphin_data.Rdata")
 n_cpg <- dim(x)[2]
 
 #################

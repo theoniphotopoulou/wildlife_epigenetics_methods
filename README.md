@@ -4,7 +4,8 @@ Scripts to reproduce results in "Methods for analysing wildlife DNA methylation 
 
 Main scripts: 
 
-#- *00_data_prep.R* generates input data (mainly merges epigenetic data and health data and allocates fold IDs for CV)
+<!--- *00_data_prep.R* generates input data (mainly merges epigenetic data and health data and allocates fold IDs for CV) -->
+- *00_make_synthetic_data.R* generates input data (creates and merges epigenetic data and health data and allocates fold IDs for CV) 
 - *fgecs.R*, *probage.R*, to *healthmodels.R* can be run in standalone mode (need to remove comments from a few initial lines in code) or are called by *01_run_all.R*.
 - *fgec.R* runs elastic net and random forest ("first generation") epigenetic clocks.
 - *probage.R* runs a maximum likelihood implementation of Probage.
