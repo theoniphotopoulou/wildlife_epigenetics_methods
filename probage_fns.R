@@ -6,7 +6,7 @@ logit <- function(x){log(x/(1-x))}
 beta_mean = function(t, eta0, omega, p){ eta0 + exp(-omega * t) * (p - eta0)}
 
 beta_var = function(t, eta0, omega, p, N, cc){ 
-  eta1 = eta0
+  eta1 = 1 - eta0
   varterm0 = eta0 * eta1
   varterm1 =  (1-p)*eta0^2 + p*eta1^2
   varterm0 / N + 
