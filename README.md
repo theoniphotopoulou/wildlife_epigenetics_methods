@@ -1,6 +1,6 @@
 # wildlife_epigenetics_methods
 
-Scripts to reproduce results in "Methods for analysing wildlife DNA methylation data" by Photopoulou et al.
+Scripts used to produce results in "Methods for analysing wildlife DNA methylation data" by Photopoulou et al.
 
 Main scripts: 
 
