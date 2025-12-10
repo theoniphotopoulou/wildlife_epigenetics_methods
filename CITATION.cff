@@ -3,8 +3,8 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: Photopoulou
   given-names: Theoni
-orcid: https://orcid.org/0000-0001-9616-9940
-title:theoniphotopoulou/wildlife_epigenetics_methods: Wildlife DNA methylation analysis v1.0.0
+orcid: "https://orcid.org/0000-0001-9616-9940"
+title: Wildlife DNA methylation analysis v1.0.0
 version: v1.0.0
 date-released: 2025-12-10
 doi: 10.5281/zenodo.17886951
